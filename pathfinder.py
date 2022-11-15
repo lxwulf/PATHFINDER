@@ -8,6 +8,7 @@ import click
 
 import distro_dl
 from distro_dl import fedora_dl
+from distro_dl import ubuntu_dl
 
 subprocess.run("clear")
 
@@ -18,6 +19,8 @@ subprocess.run("clear")
 def main(name, version):
     if name == "fedora":
         distro_dl.fedora_dl.download(version)
+    elif name == "ubuntu":
+        distro_dl.ubuntu_dl.download(version)
 
 
 if __name__ == "__main__":
