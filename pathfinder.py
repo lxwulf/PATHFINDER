@@ -2,6 +2,9 @@
 Download different Cloud images with one command.
 """
 
+__author__ = "Officer K"
+__version__ = 0.1
+
 import subprocess
 
 import click
