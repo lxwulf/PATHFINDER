@@ -10,8 +10,9 @@ import subprocess
 import click
 
 import distro_dl
-from distro_dl import fedora_dl
-from distro_dl import ubuntu_dl
+from distro_dl import fedora
+from distro_dl import file
+from distro_dl import ubuntu
 
 subprocess.run("clear")
 
