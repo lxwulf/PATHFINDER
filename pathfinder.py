@@ -17,14 +17,28 @@ from distro_dl import ubuntu
 subprocess.run("clear")
 
 
-@click.command()
-@click.argument("name", type=str)
-@click.argument("version", type=str)
-def main(name, version):
-    if name == "fedora":
-        distro_dl.fedora_dl.download(version)
-    elif name == "ubuntu":
-        distro_dl.ubuntu_dl.download(version)
+@click.command(no_args_is_help=True)
+@click.option("--name", type=str,
+              help="Distribution name you want to download.")
+@click.option("--version", type=str,
+              help="Set the version of the distribution you want to "
+                   "download.")
+@click.option("--counter", default=1, type=int,
+              help="You can set the number how many images you want to "
+                   "download.")
+def main(name, version, counter):
+    if name == "fedora" and counter == 1:
+        distro_dl.fedora.download(version)
+    elif name == "fedora" and counter != 1:
+        for number in range(1, counter + 1):
+            distro_dl.fedora.download(version)
+            distro_dl.file.rename(number, name)
+    elif name == "ubuntu" and counter == 1:
+        distro_dl.ubuntu.download(version)
+    elif name == "ubuntu" and counter != 1:
+        for number in range(1, counter + 1):
+            distro_dl.ubuntu.download(version)
+            distro_dl.file.rename(number, name)
 
 
 if __name__ == "__main__":
