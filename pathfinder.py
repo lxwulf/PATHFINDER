@@ -18,11 +18,8 @@ subprocess.run("clear")
 
 
 @click.command(no_args_is_help=True)
-@click.option("--name", type=str,
-              help="Distribution name you want to download.")
-@click.option("--version", type=str,
-              help="Set the version of the distribution you want to "
-                   "download.")
+@click.argument("name", type=str)
+@click.argument("version", type=str)
 @click.option("--counter", default=1, type=int,
               help="You can set the number how many images you want to "
                    "download.")
