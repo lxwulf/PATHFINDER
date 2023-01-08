@@ -1,5 +1,5 @@
 """
-Setup to download fedora cloud images.
+Setup to download the images.
 """
 
 import requests
