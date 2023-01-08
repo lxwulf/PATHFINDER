@@ -14,7 +14,7 @@ def get_link(source):
     return BS4_Crawler(requests.get(source).text, "html.parser")
 
 
-def download(version):
+def image(name, version):
 
     main_source = f"http://ftp.usf.edu/pub/fedora/linux/releases/{version}/" \
                   f"Cloud/x86_64/images/"
