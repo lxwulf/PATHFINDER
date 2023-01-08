@@ -2,7 +2,7 @@ import pathlib
 from pathlib import Path
 
 
-def rename(number, name):
+def rename(name, number):
     path = Path(".")
     if name == "fedora":
         directory = list(path.glob("*.x86_64.qcow2"))
